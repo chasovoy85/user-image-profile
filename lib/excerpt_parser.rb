@@ -81,7 +81,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         end
 
         characters("(#{attributes['src']})") if @markdown_images
-
+end
       when "a"
         unless @strip_links
           include_tag(name, attributes)
