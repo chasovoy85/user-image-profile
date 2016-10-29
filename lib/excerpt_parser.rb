@@ -64,10 +64,9 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
           end
         end
         
-+if @keep_image then
-+#create_element "img", :class=>'excertp_img', :src=>attributes['src']
-+characters("<img src='#{attributes['src']}' class='excertp_img' />",false,false,false)
-+else
+if @keep_image then
+characters("<img src='#{attributes['src']}' class='excertp_img' />",false,false,false)
+else
 
         # If include_images is set, include the image in markdown
         characters("!") if @markdown_images
